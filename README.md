@@ -1,2 +1,7 @@
 # textbooks
-Repository for holding my notes &amp; exercises on textbooks that I read recreationally 
+Repo for my recreational textbooks. A place to collect my thoughts, from note-taking, to summarizing, to completing exercises.
+
+## Reading List
+
+- [x] Speech and Language Processing, Third Edition (Jurafsky & Martin)
+- [ ] System Design Interview - An Insider's Guide (Alex Xu)
