@@ -1,5 +1,9 @@
 # System Design Interview - An Insider's Guide (Alex Xu)
 
+<p align="center">
+    <img src="cover.png" width="200"/>
+</p>
+
 ## Method
 
 This should not be an active note-taking repo; each entry should be a *review* to help solidify comprehension. The steps should be as follows:
