@@ -12,3 +12,7 @@ This should not be an active note-taking repo; each entry should be a *review* t
 3. **Re-read** the material
 4. **Revise** the summary with corrections, omissions, etc.
 5. **Repeat** until desired depth in summary
+
+## Further Detail
+
+- [ ] non-relational database types (https://aws.amazon.com/compare/the-difference-between-relational-and-non-relational-databases/) 
