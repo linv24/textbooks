@@ -1,7 +1,7 @@
 # System Design Interview - An Insider's Guide (Alex Xu)
 
 <p align="center">
-    <img src="cover.png" width="200"/>
+    <img src="static/cover.png" width="200"/>
 </p>
 
 ## Method
