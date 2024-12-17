@@ -2,6 +2,70 @@
 
 ## Summary
 
+<p align="center">
+  <img src="static/ch1_fig.png" width=500>
+</p>
+
+### Web Server Structure
+
+* single server setup: user accesses the web via some device(s) (computer, phone) using a domain name; domain name is resolved to an IP address by DNS server; IP address is returned to device and inputted to web server to return page content 
+* load balancer: distributes users across available servers based on request load; improves availability in case of server failures; improves security
+  * may use private IPs of web servers, better security and scalability 
+  * supports horizontal scaling of web tier by adding more web servers to be handled by load balancer 
+* key concept: decoupling components to scale them individually 
+
+### Vertical vs Horiztonal Scaling
+* vertical scaling: increasing power of a single device (increasing CPU/RAM/memory)
+  * drawbacks: hardware limit to how much vertical scaling, more expensive to scale higher, not necessarily helpful for higher demand 
+* horizontal scaling: adding additional devices to a component (more servers, more databases, etc) to improve availability and load handling
+  * drawbacks: more complexity in managing devices, higher risk of inconsistency across devices 
+
+### Databases
+* relational vs non-relational databases 
+  * tabular vs non-tabular
+  * simplicity vs scalability
+  * integrity vs performance 
+  * generic tabular structure vs use case-specific 
+  * stricter regulation for data integrity and ACID vs fewer or more complex systems for integrity
+  * suffers from join complexity vs may be optimized for complex joins 
+* master-slave structure: master handles all write operations, slaves handle (in parallel) all read operations 
+  * availability: master also capable of reads, slaves may be promoted to master, in cause of failure
+  * data is **replicated** across slaves for data reliability 
+
+### Caching
+* cache assist database for fasting retrieval of data
+* important to specify expiry times, time-to-live, caching policies for evicting data, consistency methods (eg. LRU, FIFO), etc.
+* content delivery network:
+  * acts as a cache for web servers, where CDNs cache and retrieve static content (more complex CDNs handle HTML as well) and deliver it to the user 
+  * CDNs are distributed geographically, so that query performance improvements are maximized by location 
+  * CDNs are managed by third parties
+
+### Scaling the Web Tier
+* stateful web:
+  * each web server stores data (eg. session data, user authentication) of user state in-memory
+  * much simpler, but comes with several drawbacks: user redirection may result in data inconsistency; higher risk of a SPOF; difficult to scale
+* stateless web:
+  * move state/session data to a database decoupled from the servers
+  * allows for horizontal scaling of web servers, which can all access the state database
+  * now commonly use nosql database to store state
+* message queue: 
+  * more robust method of fetching HTML data with web servers
+  * web servers (**producers**) publish message in the message queue, which are read asynchronously by workers (**consumers**) to fetch the data 
+
+### Scaling the Data Tier 
+* sharding: split data across several devices that share the same schema but share the data load
+  * important to specify a good sharding strategy: evenly distributed hashing function
+  * common problems: shard redirection (in case of shard failure or shard overload), celebrity problem (frequently accessed shards may be located on the same device), joining & de-normalization (should be able to handle complex joins)
+  * example of horizontal scaling
+* data centers:
+  * multiple geographically-spread data centers to distribute load, improve reliability & availability
+  * requires some system to redirect users based on location (eg. geoDNS)
+  * each data center has its own (1) web servers, (2) databases, and (3) caches, but all data centers may share a single noSQL state database
+* tools: useful data for large-scale applications in terms of insights, diagnostics, etc
+  * logging, metrics, monitoring, automation 
+
+
+
 ## Unknowns
 
 * relational vs non-relational databases 
