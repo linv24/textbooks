@@ -61,6 +61,17 @@
       * better where data integrity/reliability/consistency are important (e-commerce, finance)
     * eventual: data reads may be stale in small time-scale use cases, but saves much more storage 
       * better where latency, availability, and scalability are important (social media platforms, collaboration platforms)
+* database normalization & de-normalization
+  * normalization: 
+    * transform a database to adhere to "normal forms"
+    * best for **reducing data redundancy and improving data integrity** by normalizing table structure and ensuring that database operations are ACID
+    * first normal form (NF1): all columns are atomic and all rows are unique (splitting large table into smaller table)
+    * second normal form: satisfy NF1 and make sure all rows depend fully on primary key
+    * third normal form: satisfy NF2 and remove transient dependencies (ie. non-key columns shouldn't depend on other non-key columns)
+    * ... (more normal forms )
+  * denormalization: 
+    * combine smaller tables when **read performance is prioritized over write performance**, at the cost of risk of data inconsistency and storage usage 
+    * increases data redundancy to improve query time, for when database is read-heavy and/or uses complex joins that normalized databases struggle with
 
 ## References 
 
