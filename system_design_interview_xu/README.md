@@ -16,3 +16,4 @@ This should not be an active note-taking repo; each entry should be a *review* t
 ## Further Detail
 
 - [ ] non-relational database types (https://aws.amazon.com/compare/the-difference-between-relational-and-non-relational-databases/) 
+- [ ] database normal forms & examples 
