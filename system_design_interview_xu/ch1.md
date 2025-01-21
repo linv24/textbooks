@@ -3,7 +3,7 @@
 ## Summary
 
 <p align="center">
-  <img src="static/ch1_fig.png" width=500>
+  <img src="static/ch1/ch1_fig.png" width=500>
 </p>
 
 ### Web Server Structure

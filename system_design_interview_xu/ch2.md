@@ -6,7 +6,7 @@
 
 * power of two (see table below)
 <p>
-    <img src="static/ch2_1.png" width=400>
+    <img src="static/ch2/ch2_1.png" width=400>
 </p>
 
 * latency numbers (see table below)
@@ -15,14 +15,14 @@
     * avoid disk seeks/reads if possible
     * data centers take time to send data within and between, especially across regions
 <p>
-    <img src="static/ch2_2.png" width=400>
+    <img src="static/ch2/ch2_2.png" width=400>
 </p>
 
 * availability numbers (see table below)
   * availability usually references from 100% availablility (0 downtime)
   * service level agreement (SLA): agreed availability between service provider and customers 
 <p>
-    <img src="static/ch2_3.png" width=400>
+    <img src="static/ch2/ch2_3.png" width=400>
 </p>
 
 ## Example problems
@@ -35,5 +35,5 @@
   * example problems: QPS, peak QPS, storage, cache, number of servers, etc.
 
 <p>
-    <img src="static/ch2_4.png" width=400>
+    <img src="static/ch2/ch2_4.png" width=400>
 </p>
